@@ -1,0 +1,25 @@
+{
+  "name": "hynscript",
+  "version": "1.0.0",
+  "description": "收集整理常用的脚本",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babel-register ./test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huyanan/HynScript.git"
+  },
+  "author": "huyanan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huyanan/HynScript/issues"
+  },
+  "homepage": "https://github.com/huyanan/HynScript#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "mocha": "^9.1.3"
+  }
+}
