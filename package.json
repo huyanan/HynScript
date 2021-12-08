@@ -16,7 +16,9 @@
     "url": "https://github.com/huyanan/HynScript/issues"
   },
   "homepage": "https://github.com/huyanan/HynScript#readme",
-  "dependencies": {},
+  "dependencies": {
+    "mathjs": "^10.0.0"
+  },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
