@@ -1,22 +1,17 @@
 /*
  * @Author: HuYanan
  * @Date: 2022-08-26 14:00:24
- * @LastEditTime: 2022-08-26 20:09:34
+ * @LastEditTime: 2022-08-29 11:07:44
  * @LastEditors: HuYanan
  * @Description: 时间相关操作
  * @Version: 0.0.1
  * @FilePath: /HynScript/src/time/index.js
  * @Contributors: [HuYanan, other]
  */
+import { fillZero } from "../String/numberFormat";
 /**
  * 输入一个时间点，获取其最近15分钟的时间点
  * 例如输入 10:10分 应返回 10:15
- * 输入 
- * 
- * 
- */
-/**
- * 
  * @param {*} timestamp 时间戳 
  * @param {*} findNearMinute 查找最近的15分钟的倍数的分钟数
  *  例如 设置此值15
@@ -52,7 +47,7 @@ export function getNearTime (timestamp, findNearMinute = 15) {
       } else if (startTimeDistance > endTimeDistance) {
         resMinute = endTime;
       }
-      resTime = `${hour}:${resMinute}`;
+      resTime = `${fillZero(hour)}:${fillZero(resMinute)}`;
     }
   } catch (error) {
     

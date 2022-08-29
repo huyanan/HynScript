@@ -4,7 +4,8 @@
   "description": "收集整理常用的脚本",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require babel-register ./test/**/*.js"
+    "test": "mocha --require babel-register ./test/**/*.js",
+    "mocha": "mocha --require babel-register"
   },
   "repository": {
     "type": "git",
