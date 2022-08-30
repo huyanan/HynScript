@@ -1,7 +1,7 @@
 /*
  * @Author: HuYanan
  * @Date: 2022-08-26 18:23:37
- * @LastEditTime: 2022-08-30 16:46:27
+ * @LastEditTime: 2022-08-30 18:58:55
  * @LastEditors: HuYanan
  * @Description: 时间处理
  * @Version: 0.0.1
@@ -83,6 +83,10 @@ describe('time getNearTime', function() {
       date: new Date('2022/8/29 10:58'),
       res: '11:00'
     },
+    {
+      date: new Date('2022/8/29 23:59'),
+      res: '00:00'
+    }
   ];
   asserts.forEach((item) => {
     it(`输入${item.date.getTime()}，${item.date.toLocaleString()},应返回${item.res}`, function() {

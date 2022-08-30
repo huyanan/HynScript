@@ -1,7 +1,7 @@
 /*
  * @Author: HuYanan
  * @Date: 2022-08-26 14:00:24
- * @LastEditTime: 2022-08-30 16:35:53
+ * @LastEditTime: 2022-08-30 19:01:13
  * @LastEditors: HuYanan
  * @Description: 时间相关操作
  * @Version: 0.0.1
@@ -47,10 +47,15 @@ export function getNearTime (timestamp, findNearMinute = 15) {
       } else if (startTimeDistance > endTimeDistance) {
         resMinute = endTime;
       }
-      // 如果分钟计算为60，则小时进一位，分钟置为00
+      // 边界处理
+      // 边界1 如果分钟计算为60，则小时进一位，分钟置为00
       if (resMinute === 60) {
         hour++;
         resMinute = 0;
+      }
+      // 边界2 如果分钟为60，小时进一位后等于24，则相当于第二天的凌晨,故应该返回00:00
+      if (hour === 24) {
+        hour = 0;
       }
       resTime = `${fillZero(hour)}:${fillZero(resMinute)}`;
     }
