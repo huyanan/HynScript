@@ -1,7 +1,7 @@
 /*
  * @Author: HuYanan
  * @Date: 2022-08-26 14:00:24
- * @LastEditTime: 2022-08-29 11:07:44
+ * @LastEditTime: 2022-08-30 16:35:53
  * @LastEditors: HuYanan
  * @Description: 时间相关操作
  * @Version: 0.0.1
@@ -31,7 +31,7 @@ export function getNearTime (timestamp, findNearMinute = 15) {
   let endTimeDistance = 0;
   try {
     if (!isNaN(intTimestamp)) {
-      date = new Date(timestamp);
+      date = new Date(intTimestamp);
       // 获取分钟
       // 获取小时
       hour = date.getHours();
@@ -47,6 +47,11 @@ export function getNearTime (timestamp, findNearMinute = 15) {
       } else if (startTimeDistance > endTimeDistance) {
         resMinute = endTime;
       }
+      // 如果分钟计算为60，则小时进一位，分钟置为00
+      if (resMinute === 60) {
+        hour++;
+        resMinute = 0;
+      }
       resTime = `${fillZero(hour)}:${fillZero(resMinute)}`;
     }
   } catch (error) {
@@ -61,3 +66,4 @@ const param = Date.now()+40 * 60 * 1000
 const date = new Date(param);
 const paramFormat = `${date.getHours()}:${date.getMinutes()}`;
 console.log(paramFormat, getNearTime(param, 15))
+// console.log(paramFormat, getNearTime('1661744252931', 15))
