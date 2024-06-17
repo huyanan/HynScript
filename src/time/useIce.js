@@ -21,7 +21,7 @@ if (now1Time < now) {
 }
 
 // 计算多久后开机制冰
-const duration = useIceTime - now;
+const duration = useIceTime - now - needCycle * iceMakingCycle * 60 * 1000;
 console.log(new Date(now).toString())
 console.log(new Date(useIceTime).toString())
 console.log(duration)
